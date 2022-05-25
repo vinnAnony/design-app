@@ -11,37 +11,38 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Design App"),
-      ),
-      body: Center(
-          child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            width: 100,
+        appBar: AppBar(
+          title: Text("Design App"),
+        ),
+        body: Center(
+          child: Container(
             height: 100,
-            alignment: Alignment.center,
-            color: Colors.red,
-          ),
-          Container(
-            padding: const EdgeInsets.all(10),
             width: 100,
-            height: 100,
-            alignment: Alignment.center,
-            color: Colors.blue,
+            color: Colors.teal,
           ),
-          Container(
-            padding: const EdgeInsets.all(10),
-            width: 100,
-            height: 100,
-            alignment: Alignment.center,
-            color: Colors.green,
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: const EdgeInsets.all(0),
+            children: [
+              DrawerHeader(
+                child: Text(
+                  "Hello Designer, ",
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+                decoration: BoxDecoration(color: Colors.purple),
+              ),
+            ],
           ),
-        ],
-      )),
-    );
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(
+            Icons.edit,
+          ),
+        ));
   }
 }
