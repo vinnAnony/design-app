@@ -31,10 +31,6 @@ class _HomePageState extends State<HomePage> {
         body: Center(
             child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: SingleChildScrollView(
-            child: NameCard(
-                changedName: _changedName, nameController: _nameController),
-          ),
         )),
         drawer: MyDrawer(),
         floatingActionButton: FloatingActionButton(
