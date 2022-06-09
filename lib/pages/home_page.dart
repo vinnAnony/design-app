@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class HomePage extends StatefulWidget {
+  static const String routeName = "/home";
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -35,6 +36,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           title: Text("Design App"),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(Icons.exit_to_app))
+          ],
         ),
         body: data != null
             ? Center(
@@ -46,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                   );
                 }),
               )
-            : CircularProgressIndicator(),
+            : Center(child: CircularProgressIndicator()),
         drawer: MyDrawer(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
