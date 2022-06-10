@@ -1,3 +1,5 @@
+import 'package:design_app/pages/login_page.dart';
+import 'package:design_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../myDrawer.dart';
@@ -39,7 +41,8 @@ class _HomePageState extends State<HomePage> {
           actions: [
             IconButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Constants.prefs.setBool("loggedIn", false);
+                  Navigator.pushReplacementNamed(context, LoginPage.routeName);
                 },
                 icon: Icon(Icons.exit_to_app))
           ],
